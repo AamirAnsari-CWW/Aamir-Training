@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(255, 255, 255);
+    background-image: url(images/bg.png);
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    color: #16181f;
+}
+
+.hero {
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    min-height: 100vh;
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+    text-align: center;
+    padding: 84px 72px 32px;
+    display: flex;
+    flex-direction: column;
+}
+
+.heading {
+    max-width: 570px;
+    margin: 0 auto 20px;
+}
+
+.heading h1 {
+    font-size: 64px;
+    line-height: 1.05;
+    font-weight: 700;
+}
+
+.para {
+    max-width: 876px;
+    margin: 0 auto 20px ;
+}
+
+.para p {
+    font-size: 32px;
+    line-height: 1.35;
+    color: #343945;
+}
+
+.image {
+    margin-top: auto;
+}
+
+.image img {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.download {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 8px;
+}
+
+.download img {
+    width: 46px;
+    height: 46px;
+    display: block;
+}
+
+.download p {
+    font-size: 18px;
+    line-height: 1.25;
+    text-align: left;
+}
+
+@media (max-width:1024px) {
+    .container {
+        min-height: 0;
+        padding: 70px 40px 28px;
+    }
+
+    .heading h1 {
+        font-size: 54px;
+    }
+
+    .para p {
+        font-size: 20px;
+    }
+}
+
+@media (max-width:768px) {
+    .container {
+        min-height: 0;
+        padding: 48px 22px 28px;
+    }
+
+    .heading {
+        max-width: 520px;
+    }
+
+    .heading h1 {
+        font-size: 38px;
+    }
+
+    .para {
+        max-width: 520px;
+        margin-bottom: 28px;
+    }
+
+    .para p {
+        font-size: 16px;
+    }
+
+    .image img {
+        width: 100%;
+    }
+
+    .download {
+        justify-content: center;
+        margin-top: 18px;
+    }
+    .download img{
+        width:30px;
+        height:30px;
+    }
+
+    .download p {
+        font-size: 14px;
+    }
+}
+

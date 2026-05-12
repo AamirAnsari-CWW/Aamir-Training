@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #15191f;
+}
+
+.hero {
+    background-color: #fffafc;
+    min-height: 100vh;
+}
+
+.container {
+    min-height: 100vh;
+    width: 100%;
+    gap: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    position: relative;
+
+}
+
+.hero-text {
+    flex: 1;
+    margin: 20px;
+    padding-left: 30px;
+}
+
+.hero-text h1 {
+    font-size: 74px;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.hero-text img {
+    width: 285px;
+    position: absolute;
+    top: 4px;
+    left: 216px;
+}
+
+.hero-text p {
+    font-size: 24px;
+    margin-bottom: 40px;
+    margin-right: 80px;
+}
+
+.hero-text button {
+    padding: 20px 50px;
+    font-size: 18px;
+    font-weight: 500;
+    align-items: center;
+    background-color: #1885F2;
+    background-image: linear-gradient(25deg, #C4FDFF, #D1EBFD, #E3D4FA, #EECCE3, #FEC0C3);
+    border-radius: 10px;
+    border: none;
+
+}
+
+.image {
+    flex: 1;
+}
+
+.image img {
+    width: 100%;
+}
+
+@media (max-width:1024px) {
+     .hero {
+        min-height: 100vh;
+    }
+
+    .container {
+        min-height: 0;
+        background-color: #fff0f8;
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 40px;
+
+    }
+
+    .hero-text {
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 58px;
+
+    }
+
+    .hero-text img {
+        text-align: center;
+        width: 170px;
+        top: 30px;
+        left: 555px;
+    }
+
+    .hero-text p {
+
+        font-size: 24px;
+        margin-right: 0;
+    }
+
+    .hero-text button {
+        padding: 20px 50px;
+        font-size: 26px;
+
+    }
+    .image img {
+        width: 100%;
+    }  
+}
+
+/* mobile view */
+
+@media (max-width:768px) {
+    .hero {
+        min-height: 100vh;
+    }
+
+    .container {
+        min-height: 0;
+        background-color: #fff0f8;
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 20px;
+
+    }
+
+    .hero-text {
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        text-align: left;
+        font-size: 42px;
+    }
+
+    .hero-text img {
+        width: 150px;
+        top: 10px;
+        left: 125px;
+    }
+
+    .hero-text p {
+        text-align: left;
+        font-size: 20px;
+        margin-right: 0;
+    }
+
+    .hero-text button {
+        padding: 20px 50px;
+        font-size: 18px;
+
+    }
+
+    .image img {
+        width: 100%;
+    }
+
+}
