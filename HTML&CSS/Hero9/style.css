@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #245235;
+
+}
+
+.hero {
+    background-image: linear-gradient(100deg #FFA21F 8%);    
+}
+
+.container {
+    background-color: #FFF6F1;
+    background-image: url(images/Background.png);
+    background-size: 250px auto;
+    background-repeat: repeat-y;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    padding: 70px 72px;
+    gap: 70px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.small-text {
+    margin-left: 100px;
+    margin-bottom: 28px;
+    line-height: 1.5;
+    color: #7D6D5C;
+    font-size: 20px;
+}
+
+.title-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.line {
+    width: 100px;
+    height: 1px;
+    margin-top: 32px;
+    background-color: #8b857d;
+}
+
+.hero-text h1 {
+    font-size: 68px;
+    font-weight: 700;
+    line-height: 1;
+    color: #255235;
+    margin-bottom: 30px;
+}
+
+.hero-text button {
+    margin-left: 100px;
+    padding: 14px 18px;
+    color: white;
+    font-size: 18px;
+    background-color:#006154;
+    border: none;
+    border-radius: 5px;
+}
+
+.hero-text button span {
+    padding-left: 12px;
+    font-size: 26px;
+    line-height: 0;
+}
+
+.image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.image img {
+    width: 100%;
+    max-width: 575px;
+}
+
+/* for tablet view */
+
+@media (max-width:1024px) {
+    .container {
+        padding: 60px 40px;
+        gap: 35px;
+    }
+
+    .hero-text {
+        padding-left: 30px;
+    }
+
+    .small-text,
+    .hero-text button {
+        margin-left: 75px;
+    }
+
+    .hero-text h1 {
+        font-size: 56px;
+    }
+
+    .line {
+        width: 60px;
+    }
+}
+
+/* mobile view */
+
+@media (max-width:768px) {
+    .hero {
+        background-size: 190px auto;
+    }
+
+    .container {
+        flex-direction: column-reverse;
+        text-align: left;
+        padding: 45px 22px;
+        gap: 32px;
+    }
+
+    .hero-text {
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .small-text {
+        margin-left:70px;
+        font-size: 17px;
+    }
+
+    .title-row {
+        gap: 14px;
+    }
+
+    .line {
+        width: 48px;
+        margin-top: 22px;
+    }
+
+    .hero-text h1 {
+        font-size: 42px;
+    }
+
+    .hero-text button {
+        margin-left: 62px;
+        font-size: 16px;
+    }
+
+    .image img {
+        width: 92%;
+    }
+}

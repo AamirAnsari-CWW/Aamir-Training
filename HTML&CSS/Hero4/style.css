@@ -20,10 +20,9 @@ body {
 .container {
     min-height: 100vh;
     width: 100%;
-    max-width: 1440px;
     margin: auto;
     text-align: center;
-    padding: 85px 72px 0;
+    padding: 85px 0 0 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -63,14 +62,13 @@ body {
 }
 
 .image {
+    padding:0;
     width: 100%;
 }
 
 .image img {
     width: 100%;
-    max-width: 1180px;
     display: block;
-    margin: 0 auto;
 }
 
 @media (max-width:1024px) {
