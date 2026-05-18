@@ -1,0 +1,276 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fffffa;
+}
+
+.hero {
+    min-height: 100vh;
+    background-color: #fffffa;
+}
+
+.container {
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+}
+
+.hero-image {
+    padding: 20px;
+}
+
+.hero-image img {
+    width: 100%;
+}
+
+.hero-text {
+    display: flex;
+    gap: 60px;
+    align-items: stretch;
+    padding: 0 20px 40px;
+}
+
+.left-content {
+    flex: 1;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 38px 34px;
+    box-shadow: 5px 5px 5px 5px #dbdbdb;
+}
+
+.left-title {
+    color: #000000;
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 34px;
+}
+
+.left-details {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.stat-item h2 {
+    color: #579626;
+    font-size: 42px;
+    line-height: 1;
+}
+
+.stat-item p {
+    max-width: 120px;
+    color: #676767;
+    font-size: 12px;
+    line-height: 1.25;
+}
+
+.quote-box {
+    flex: 1;
+    min-width: 440px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.input-box {
+    flex: 1;
+}
+
+.input-box input {
+    width: 100%;
+    color: #4a4a4a;
+    font-size: 18px;
+    padding: 0 0 10px;
+    border: none;
+    border-bottom: 1px solid #cfcfcf;
+    outline: none;
+    background-color: transparent;
+}
+
+.input-box input::placeholder {
+    color: #4a4a4a;
+}
+
+.quote-box button {
+    min-width: 130px;
+    padding: 12px 24px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    background-color: #579626;
+    border: none;
+    border-radius: 28px;
+}
+
+.right-content {
+    display: flex;
+    align-items: center;
+    gap: 75px;
+    width: 466px;
+    background-color: #C1834E;
+    border-top-left-radius: 180px;
+    border-bottom-left-radius: 180px;
+}
+
+.circle-img {
+    width: 164px;
+    margin-left: 15px;
+    flex-shrink: 0;
+}
+
+.circle-img img {
+    width: 160px;
+    display: block;
+}
+
+.circle-img a {
+    display: block;
+}
+
+.circle-text {
+    align-self: center;
+    color: #ffff;
+    font-size: 24px;
+}
+/* tablet view */
+@media (max-width: 1024px){
+    .hero-text {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .left-content {
+        padding: 34px 26px;
+        width: 100%;
+    }
+
+    .left-title {
+        font-size: 34px;
+        margin-bottom: 32px;
+    }
+
+    .left-details {
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .quote-box {
+        flex: 1;
+        min-width: 320px;
+        width: auto;
+    }
+
+    .right-content {
+        width: 100%;
+        min-height: 165px;
+        margin: 0;
+        padding: 22px 35px;
+        gap: 55px;
+        border-radius: 95px;
+        justify-content: center;
+    }
+
+    .circle-img {
+        width: 120px;
+        margin-left: 0;
+    }
+
+    .circle-img img {
+        width: 120px;
+    }
+
+    .circle-text {
+        font-size: 22px;
+    }
+}
+
+
+/* mobile view */
+@media (max-width: 768px) {
+    .hero-text {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .left-content {
+        padding: 28px 22px;
+        text-align: center;
+    }
+
+    .left-title {
+        font-size: 30px;
+        margin-bottom: 28px;
+    }
+
+    .left-details {
+        flex-direction: column;
+        display:inline-flex;
+        gap: 20px;
+    }
+
+    .stat-item {
+        justify-content: center;
+    }
+
+    .stat-item p {
+        text-align: left;
+        font-size: 15px;
+    }
+
+    .stat-item h2 {
+        font-size: 38px;
+    }
+
+    .quote-box {
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .input-box {
+        width: 100%;
+    }
+
+    .input-box input {
+        font-size: 18px;
+    }
+
+    .quote-box button {
+        font-size: 16px;
+    }
+
+    .right-content {
+        width: 100%;
+        min-height: 110px;
+        height: auto;
+        padding: 12px 18px;
+        border-radius: 70px;
+        justify-content: center;
+        gap: 26px;
+    }
+
+    .circle-img {
+        width: 80px;
+        margin-left: 0;
+
+    }
+
+    .circle-img img {
+        width: 100%;
+    }
+
+    .circle-text {
+        align-self: center;
+        font-size: 16px;
+    }
+}

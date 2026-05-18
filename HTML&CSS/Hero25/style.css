@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #171717;
+}
+
+.hero {
+    padding-top: 30px;
+    min-height: 100vh;
+    background-color: #171717;
+    position: relative;
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 250px 30px 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-text {
+    max-width: 660px;
+    margin: auto;
+    text-align: center;
+}
+
+.hero-text h1 {
+    padding:0 10px;
+    max-width: 660px;
+    color: #ffffff;
+    font-size: 56px;
+    line-height: 1.25;
+    font-weight: 700;
+    margin-bottom: 35px;
+}
+
+.green {
+    color: #A2FB6F;
+}
+
+.blue {
+    color: #8091FF;
+}
+
+.hero-text p {
+    max-width: 700px;
+    margin: 0 auto 45px;
+    color: #A0A0A0;
+    font-size: 20px;
+    line-height: 1.25;
+}
+
+.hero-text button {
+    background-color: #8091FF;
+    color: #111111;
+    border: none;
+    border-radius: 20px;
+    padding: 25px 58px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.shape {
+    position: absolute;
+}
+
+.shape-left {
+    width: 280px;
+    top: 30px;
+    left: 160px;
+    opacity: 0.70;
+}
+
+.shape-right {
+    height: 100%;
+    top: 90px;
+    right: 210px;
+    opacity: 0.9;
+}
+
+.arrow {
+    width: 10px;
+    margin-top: 150px;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        padding: 190px 28px 55px;
+    }
+
+    .hero-text h1 {
+        font-size: 48px;
+    }
+
+    .hero-text p {
+        font-size: 18px;
+    }
+
+    .shape-left {
+        width: 230px;
+        left: 60px;
+    }
+
+    .shape-right {
+        height: 620px;
+        right: 70px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 150px 22px 45px;
+    }
+
+    .hero-text h1 {
+        font-size: 38px;
+        line-height: 1.25;
+    }
+
+    .hero-text p {
+        font-size: 16px;
+        line-height: 1.45;
+        margin-bottom: 35px;
+    }
+
+    .hero-text button {
+        width: 50%;
+        padding: 12px 24px;
+        font-size: 18px;
+    }
+
+    .shape-left {
+        width: 180px;
+        top: 50px;
+        left: 0px;
+    }
+
+    .shape-right {
+        height: 460px;
+        right: 20px;
+        top: 120px;
+    }
+
+    .arrow {
+        margin-top: 70px;
+    }
+}

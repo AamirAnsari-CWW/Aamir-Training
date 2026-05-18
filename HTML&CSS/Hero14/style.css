@@ -1,0 +1,162 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+.hero{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 40px;
+    background-image: url("images/bg.png");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.hero-text{
+    width:506px;
+}
+.hero-text .review{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap:10px;
+    margin-bottom: 10px;
+}
+.hero-text .review img{
+    width:23px;
+}
+.hero-text .review p{
+    font-size: 23px;
+    color: #868686;
+    margin-bottom: 0;
+    line-height: 1;
+}
+
+.hero-text h1{
+    font-size: 54px;
+    margin-bottom: 20px;
+}
+.para{
+    font-size:21px;
+    color:#919191;
+    margin-bottom: 30px;
+}
+button {
+    padding: 10px 30px;
+    color: #F9F9F9;
+    font-weight:200;
+    font-size: 20px;
+    background-color: #7D894C;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.hero-image{
+    flex:1;
+}
+.hero-image img{
+    min-height: 100vh;
+    width:100%;
+    position: relative;
+    z-index: -1;
+
+}
+
+/* tablet view */
+@media (max-width: 1024px) {
+ .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 100px 22px 0;
+        gap:50px;
+    }
+
+    .hero-text {
+        width: 100%;
+    }
+
+    .hero-text .review {
+        justify-content: center;
+    }
+
+    .hero-text h1 {
+        font-size: 42px;
+    }
+
+    .para{
+        font-size: 18px;
+        line-height: 1.5;
+        padding:0 80px;
+    }
+
+    .hero-text .review p {
+        font-size: 18px;
+        line-height: 1;
+    }
+
+    button {
+        font-size: 18px;
+    }
+
+    .hero-image {
+        width: 100%;
+    }
+    .hero-image img {
+        min-height: 0;
+        z-index: 0;
+        object-fit: cover;
+    }
+}
+
+/* mobile view */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 45px 22px 0;
+    }
+
+    .hero-text {
+        width: 100%;
+        text-align: start;
+    }
+
+    .hero-text .review {
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 38px;
+    }
+
+    .para{
+        font-size: 16px;
+        line-height: 1.5;
+        padding:0px;
+        text-align: justify;
+    }
+
+    .hero-text .review p {
+        font-size: 16px;
+        line-height: 1;
+
+    }
+
+    button {
+        font-size: 16px;
+        padding: 10px 24px;
+    }
+
+    .hero-image {
+        width: 100%;
+    }
+    .hero-image img {
+        min-height: 0;
+        width:100%;
+        z-index: 0;
+    }
+}

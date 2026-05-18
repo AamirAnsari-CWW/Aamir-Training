@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fff7ec;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 100px;
+    background-image: url("images/background.png");
+    background-size: cover;
+    background-position:left -80px;
+    background-repeat: repeat-y;
+    overflow: visible;
+}
+
+.hero-content {
+    flex:1;
+    max-width: 641px;
+    padding-left:80px;
+}
+
+.small-title {
+    color: #1f1f1f;
+    font-size: 40px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.hero-content h1 {
+    color: #AB3630;
+    font-size: 120px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.hero-para {
+    max-width: 641px;
+    color: #8f8f8f;
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+.hero-content button {
+    padding: 10px 20px;
+    color: white;
+    font-weight:200;
+    font-size: 20px;
+    background-color: #AB3630;
+    border: none;
+    border-radius: 10px;
+}
+
+.hero-image {
+    display: flex;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 760px;
+    display: block;
+}
+
+/* tablet view */
+
+@media (max-width: 1024px) {
+    .hero {
+        flex-direction: column-reverse;
+        padding: 60px 38px;
+        gap: 20px;
+    }
+
+    .small-title {
+        font-size: 36px;
+        letter-spacing: 6px;
+        margin-bottom: 10px;
+    }
+
+    .hero-content h1 {
+        font-size: 88px;
+        margin-bottom: 36px;
+    }
+
+    .hero-para {
+        font-size: 17px;
+        margin-bottom: 34px;
+    }
+
+    .hero-content button {
+        font-size: 17px;
+    }
+}
+
+/* mobile view */
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 50px 22px 0 ;
+    }
+
+    .hero-content,
+    .hero-image {
+        width: 100%;
+    }
+
+    .small-title {
+        font-size: 24px;
+        letter-spacing: 4px;
+    }
+
+    .hero-content h1 {
+        font-size: 58px;
+        margin-bottom: 28px;
+    }
+
+    .hero-para {
+        font-size: 15px;
+        margin-bottom: 28px;
+    }
+
+    .hero-content button {
+        padding: 14px 28px;
+        font-size: 16px;
+    }
+
+    .hero-image {
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+}
+    

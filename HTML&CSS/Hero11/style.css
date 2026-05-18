@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #000;
+    background-color: #fffcf6;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    background-color: #fffcf6;
+}
+
+.hero-image {
+    flex:1.5;
+    min-height: 100vh;
+}
+
+.hero-image img {
+    width: 100%;
+
+}
+
+.hero-content {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 70px 78px;
+}
+
+.hero-text {
+    max-width: 505px;
+}
+
+.hero-text h1 {
+    font-size: 64px;
+    font-weight: 800;
+    color:#373737;
+    line-height: 1.25;
+    margin-bottom: 38px;
+}
+
+.hero-text span {
+    color: #D17537;
+}
+
+.hero-text p {
+    max-width: 505px;
+    color: #919191;
+    font-size: 20px;
+    line-height: 1.45;
+    margin-bottom: 60px;
+}
+
+.explore img {
+    width: 147px;
+    display: block;
+}
+
+/* tablet view */
+
+@media (max-width: 1080px) {
+    .hero {
+        flex-direction: column-reverse;
+    }
+
+    .hero-image {
+        min-height: 0;
+        width: 100%;
+    }
+
+    .hero-image img {
+        width: 100%;
+        height: 100%;
+        object-position: left bottom;
+    }
+
+    .hero-content {
+        min-height: 0;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero-text {
+        max-width: 620px;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 56px;
+        line-height: 1.16;
+        margin-bottom: 28px;
+    }
+
+    .hero-text p {
+        max-width: 620px;
+        font-size: 18px;
+        margin-bottom: 42px;
+    }
+
+    .explore {
+        display: flex;
+        justify-content: center;
+    }
+
+    .explore img {
+        width: 135px;
+    }
+}
+/* mobile view */
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column-reverse;
+    }
+
+    .hero-image,
+    .hero-content {
+        width: 100%;
+        min-height: auto;
+    }
+
+    .hero-image {
+        height: 100%;
+    }
+
+    .hero-content {
+        padding: 36px 22px 42px;
+    }
+
+    .hero-text {
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 42px;
+        line-height: 1.18;
+        margin-bottom: 24px;
+    }
+
+    .hero-text p {
+        font-size: 16px;
+        margin-bottom: 36px;
+    }
+
+    .explore {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    .explore img {
+        width: 130px;
+    }
+}

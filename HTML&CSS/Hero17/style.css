@@ -1,0 +1,146 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    gap:10px;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+.hero-text {
+    padding-left: 60px;
+    width: 516px;
+
+}
+
+.hero-text h1 {
+    color: #bb2f23;
+    font-size: 180px;
+    font-weight: 600;
+    margin-bottom: -10px;
+}
+
+.hero-text h2 {
+    color: #B53322;
+    font-size: 46px;
+    font-weight: 700;
+    margin-bottom: 48px;
+}
+
+.hero-text p {
+    max-width: 516px;
+    color: #3d3d3d;
+    font-size: 18px;
+    line-height: 1.35;
+    margin-bottom: 48px;
+}
+
+.hero-text button {
+    padding: 20px 40px;
+    color: #ffffff;
+    background-color: #EA5C0B;
+    border: none;
+    border-radius: 8px;
+    font-size: 24px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.hero-image {
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.hero-image img {
+    width:100%;
+}
+
+/* tablet view */
+@media (max-width: 1024px) {
+    .hero {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 40px;
+    }
+
+    .hero-text {
+        width: 100%;
+        margin-bottom: 100px;
+    }
+
+    .hero-text h1 {
+        font-size: 105px;
+    }
+
+    .hero-text h2 {
+        font-size: 38px;
+        margin-bottom: 26px;
+    }
+
+    .hero-text p {
+        max-width: 720px;
+        font-size: 20px;
+        margin-bottom: 34px;
+    }
+
+    .hero-text button {
+        padding: 18px 36px;
+        font-size: 20px;
+    }
+
+    .hero-image {
+        width: 100%;
+    }
+
+    .hero-image img {
+        width: 100%;
+        margin-left: 6%;
+        margin-right: 0;
+    }
+}
+
+/* mobile view */
+@media (max-width: 768px) {
+
+    .hero {
+        flex-direction: column-reverse;
+        gap: 34px;
+    }
+   
+    .hero-text h1 {
+        font-size: 76px;
+    }
+
+    .hero-text h2 {
+        font-size: 30px;
+        margin-bottom: 22px;
+    }
+
+    .hero-text p {
+        font-size: 17px;
+        line-height: 1.45;
+        margin-bottom: 28px;
+    }
+
+    .hero-text button {
+        padding: 15px 28px;
+        font-size: 17px;
+    }
+
+    .hero-image img {
+        width: 100%;
+    }
+}
+
+

@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #003f46;
+}
+
+.hero {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background-image:  url("images/bg.png");
+    background-size: cover;
+    background-position: center top;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    margin: auto;
+    padding: 170px 40px 70px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-text {
+    max-width: 1020px;
+    margin: 0 auto 78px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.hero-text h1 {
+    font-size: 66px;
+    line-height: 1;
+    font-weight: 700;
+    margin-bottom: 32px;
+}
+
+.hero-text p {
+    max-width: 735px;
+    margin: auto;
+    color: #f0f5f5;
+    font-size: 17px;
+    line-height: 1.25;
+    font-weight: 400;
+}
+
+.hero-card {
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+    position: relative;
+    z-index: 2;
+    top: -40px;
+}
+
+.hero-card img {
+    width: 100%;
+}
+
+/* tablet view */
+@media (max-width: 1024px) {
+    .container {
+        padding: 120px 34px 60px;
+    }
+
+    .hero-text {
+        margin: 100px 0 0 0;
+    }
+
+    .hero-text h1 {
+        font-size: 52px;
+        line-height: 1.2;
+        margin-bottom: 28px;
+    }
+
+    .hero-text p {
+        max-width: 600px;
+        font-size: 18px;
+        line-height: 1.4;
+    }
+
+    .hero-card {
+        max-width: 920px;
+    }
+    .hero-card img{
+    position: absolute;
+    top: 140px;
+    }
+}
+
+/* mobile view */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 100vh;
+        background-color: #003f46;
+    }
+
+    .container {
+        min-height: 100vh;
+        padding: 70px 22px 28px;
+    }
+
+    .hero-text {
+        margin-bottom: 30px;
+    }
+
+    .hero-text h1 {
+        font-size: 36px;
+        line-height: 1;
+        margin-bottom: 22px;
+    }
+
+    .hero-text p {
+        font-size: 16px;
+        line-height: 1.45;
+    }
+
+    .hero-card img {
+        width: 100%;
+        position: absolute;
+        top: 100px;
+    }
+    }
+
+

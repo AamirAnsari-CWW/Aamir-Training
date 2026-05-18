@@ -1,0 +1,187 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+.hero {
+    background-color: #FFFEF5;
+    padding-bottom: 50px;
+}
+
+.container {
+    min-height:100vh;
+    width: 100%;
+    gap:30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    position: relative;
+}
+
+.hero-text {
+    flex: 1;
+    position: relative;
+    top: -80px;
+    padding-left:40px;
+}
+
+.hero-text h1{
+    max-width:590px;
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.hero-text h1 span{
+    color:#015A4E;
+}
+
+.hero-text p{
+    max-width:552px;
+    color: #636571;
+    font-size: 18px;
+}
+
+.hero-image{
+    flex:1;
+}
+.hero-image img{
+    width:100%;
+}
+
+.booking-form {
+    width: 80%;
+    background-color: #FFFEF5;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 10px 10px #e5e4e4;
+    display: flex;
+    gap: 20px;
+    align-items: end;
+    position: absolute;
+    bottom: 0;
+    padding-left:40px;
+}
+
+.form-box {
+    flex: 1;
+}
+
+.form-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.form-title img {
+    width: 25px;
+}
+
+.form-title label {
+    color: #000937;
+    font-size: 20px;
+}
+
+.form-box input {
+    width: 100%;
+    height: 55px;
+    border: 1px solid #b8b8b8;
+    border-radius: 10px;
+    padding: 0 15px;
+    font-size: 18px;
+}
+
+
+.booking-form button {
+    height: 55px;
+    width: 170px;
+    border: none;
+    border-radius: 10px;
+    background-color: #015A4E;
+    color: white;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.booking-form button img {
+    width: 23px;
+}
+
+@media (max-width: 1024px) {
+    .hero {
+        padding: 40px 20px;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+        min-height: auto;
+    }
+    .hero-text{
+    position: relative;
+    top: 20px;
+    }
+
+    .hero-text h1 {
+        font-size: 52px;
+    }
+
+    .hero-image {
+        width: 100%;
+    }
+
+    .booking-form {
+        position: static;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .booking-form button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 30px 15px;
+    }
+
+    .container {
+        gap: 25px;
+    }
+
+    .hero-text h1 {
+        font-size: 40px;
+    }
+
+    .hero-text p {
+        font-size: 16px;
+    }
+
+    .booking-form {
+        padding: 18px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 18px;
+    }
+
+    .form-title label {
+        font-size: 18px;
+    }
+
+    .form-box input {
+        height: 50px;
+        font-size: 16px;
+    }
+
+    .booking-form button {
+        height: 50px;
+        font-size: 17px;
+    }
+}
