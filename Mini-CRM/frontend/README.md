@@ -121,15 +121,6 @@ npm run build
 - Leads
 - Send Email
 
-## Stakeholder Presentation Points
-
-- Project Overview: Mini CRM prototype for managing customer and sales activity
-- Business Problem: Customer inquiries, leads, follow-ups, and communication need one organized workspace
-- Solution Architecture: React frontend connected to Node.js, Express.js, MongoDB, JWT, and Nodemailer backend
-- Application Demo: Login, dashboard, customer CRUD, lead tracking, email sending, responsive UI
-- Challenges & Learnings: Authentication flow, reusable component structure, validation, API integration, and email setup
-- Future Roadmap: Role-based dashboards, activity history, advanced reporting, reminders, file attachments, and deployment
-
 ## Expected Outcome
 
 The project delivers a working CRM prototype demonstrating customer management, lead tracking, email communication, dashboard reporting, authentication, responsive UI, and scalable architecture.
