@@ -1,0 +1,1174 @@
+/*
+  CSS map
+  1. Base setup and shared UI utilities
+  2. Auth pages: Login.jsx and Register.jsx
+  3. App shell: AppLayout.jsx
+  4. Shared page surfaces and headings
+  5. Dashboard page: Dashboard.jsx
+  6. Customers/Leads pages: Customers.jsx and Leads.jsx
+  7. Modal and record forms: Modal.jsx plus create/edit forms
+  8. Email page: Email.jsx
+  9. Responsive rules
+*/
+
+/* ===== 1. Base setup and shared UI utilities ===== */
+/* Global reset and design tokens used across the CRM UI. */
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary: #7c3aed;
+  --color-secondary: #8b5cf6;
+  --color-background: #f8fafc;
+  --color-card: #ffffff;
+  --color-text: #1f2937;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+  --color-sidebar: #1e1b4b;
+  --color-muted: #64748b;
+  --color-border: #e2e8f0;
+  --color-primary-soft: #f3e8ff;
+  --color-success-soft: #d1fae5;
+  --color-warning-soft: #fef3c7;
+  --color-danger-soft: #fee2e2;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-text);
+  background: var(--color-background);
+  font-synthesis: none;
+}
+
+/* Base element styles keep typography and form controls consistent. */
+body {
+  margin: 0;
+  min-width: 320px;
+  color: var(--color-text);
+  background: var(--color-background);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 8px;
+  font-size: 30px;
+}
+
+h2 {
+  margin-bottom: 6px;
+  font-size: 20px;
+}
+
+/* Shared buttons, alerts, and text utilities. */
+.primary-button,
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 18px;
+  border-radius: 9px;
+  border: 1px solid transparent;
+  font-weight: 700;
+}
+
+.primary-button {
+  color: var(--color-card);
+  background: var(--color-primary);
+}
+
+.primary-button:hover {
+  background: var(--color-secondary);
+}
+
+.secondary-button {
+  color: var(--color-text);
+  background: var(--color-card);
+  border-color: var(--color-border);
+}
+
+.full-button {
+  width: 100%;
+}
+
+.alert {
+  padding: 12px 14px;
+  margin-bottom: 18px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.alert-error {
+  color: #991b1b;
+  background: var(--color-danger-soft);
+  border: 1px solid rgba(239, 68, 68, 0.28);
+}
+
+.alert-success {
+  color: #065f46;
+  background: var(--color-success-soft);
+  border: 1px solid rgba(16, 185, 129, 0.28);
+}
+
+.dismissible-alert {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.alert-close {
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  border-radius: 8px;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.alert-close:hover {
+  background: rgba(6, 95, 70, 0.1);
+}
+
+.eyebrow {
+  margin-bottom: 7px;
+  color: var(--color-primary);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.muted-text,
+.page-heading p,
+.panel-heading p {
+  color: var(--color-muted);
+}
+
+/* ===== 2. Auth pages: Login.jsx and Register.jsx ===== */
+/* Split intro panel plus centered login/register form. */
+.auth-page {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  min-height: 100vh;
+}
+
+.auth-intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 50px 8vw;
+  color: var(--color-card);
+  background:
+    radial-gradient(circle at 20% 20%, var(--color-secondary) 0, transparent 30%),
+    linear-gradient(380deg, var(--color-sidebar), var(--color-primary));
+}
+
+.auth-intro h1 {
+  max-width: 620px;
+  margin-bottom: 18px;
+  font-size: clamp(38px, 5vw, 58px);
+  line-height: 1.05;
+}
+
+.auth-intro p:not(.eyebrow) {
+  max-width: 560px;
+  color: #ede9fe;
+  font-size: 19px;
+  line-height: 1.6;
+}
+
+.auth-intro .eyebrow {
+  color: #ddd6fe;
+}
+
+.auth-brand,
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.auth-brand {
+  font-size: 20px;
+}
+
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  color: var(--color-card);
+  background: var(--color-primary);
+  font-weight: 800;
+}
+
+.auth-intro .brand-mark {
+  color: var(--color-primary);
+  background: var(--color-card);
+}
+
+.intro-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.intro-points span {
+  padding: 9px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 30px;
+  color: #ede9fe;
+  font-size: 13px;
+}
+
+.auth-form-side {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+  background: var(--color-card);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 430px;
+}
+
+.auth-card h2 {
+  margin-bottom: 8px;
+  font-size: 30px;
+}
+
+.auth-card label,
+.record-form label,
+.email-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 18px;
+  color: var(--color-text);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 11px 12px;
+  color: var(--color-text);
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  outline: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.14);
+}
+
+textarea {
+  resize: vertical;
+}
+
+.field-help {
+  display: block;
+  margin-top: -10px;
+  margin-bottom: 20px;
+  color: var(--color-muted);
+  font-size: 13px;
+}
+
+.form-link {
+  margin-top: 22px;
+  color: var(--color-muted);
+}
+
+.form-link a {
+  color: var(--color-primary);
+  font-weight: 800;
+}
+
+/* Password input wrapper supports the show/hide icon button. */
+.password-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-field input {
+  width: 100%;
+  padding-right: 45px;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 18px;
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.password-toggle:hover {
+  color: #333;
+}
+
+/* ===== 3. App shell: AppLayout.jsx ===== */
+/* Fixed sidebar, sticky topbar, and route content area for protected pages. */
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  width: 270px;
+  padding: 24px;
+  color: var(--color-card);
+  background: var(--color-sidebar);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.brand {
+  margin-bottom: 32px;
+}
+
+.brand small,
+.sidebar-user small {
+  display: block;
+  color: #c4b5fd;
+}
+
+.sidebar-nav {
+  display: grid;
+  gap: 8px;
+}
+
+.sidebar-nav a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  color: #ddd6fe;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.sidebar-nav a.active,
+.sidebar-nav a:hover {
+  color: var(--color-card);
+  background: rgba(139, 92, 246, 0.24);
+}
+
+.nav-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  color: var(--color-card);
+  background: var(--color-primary);
+  font-size: 13px;
+}
+
+.sidebar-user {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.avatar,
+.person-cell span {
+  display: inline-grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  color: var(--color-card);
+  background: var(--color-sidebar);
+  font-weight: 800;
+}
+
+.logout-button {
+  grid-column: 1 / -1;
+  padding: 9px 12px;
+  color: var(--color-card);
+  background: var(--color-danger);
+  border: 0;
+  border-radius: 8px;
+  font-weight: 800;
+}
+
+.main-area {
+  width: 100%;
+  margin-left: 270px;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 72px;
+  padding: 0 32px;
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid var(--color-border);
+  backdrop-filter: blur(12px);
+}
+
+.welcome-text {
+  display: block;
+  color: var(--color-muted);
+  font-size: 13px;
+}
+
+.menu-button {
+  display: none;
+  padding: 9px 12px;
+  color: var(--color-primary);
+  background: var(--color-primary-soft);
+  border: 0;
+  border-radius: 8px;
+  font-weight: 800;
+}
+
+.page-content {
+  padding: 32px;
+}
+
+.page-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+/* ===== 4. Shared page surfaces and headings ===== */
+/* Reusable surface styles for panels, dashboard cards, quick actions, and help cards. */
+.panel,
+.stat-card,
+.quick-actions,
+.help-card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(23, 32, 51, 0.04);
+}
+
+.panel {
+  padding: 22px;
+}
+
+/* ===== 5. Dashboard page: Dashboard.jsx ===== */
+/* Top statistic cards on the dashboard. */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.stat-card {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding: 20px;
+}
+
+.stat-card span {
+  color: var(--color-muted);
+  font-size: 14px;
+}
+
+.stat-card strong {
+  display: block;
+  margin: 4px 0;
+  font-size: 28px;
+}
+
+.stat-card small {
+  color: var(--color-muted);
+}
+
+.stat-icon {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  color: var(--color-card);
+  font-weight: 900;
+}
+
+.stat-blue .stat-icon {
+  background: var(--color-primary);
+}
+
+.stat-purple .stat-icon {
+  background: var(--color-secondary);
+}
+
+.stat-green .stat-icon {
+  background: var(--color-success);
+}
+
+.stat-orange .stat-icon {
+  background: var(--color-warning);
+}
+
+/* Two-column dashboard chart area. */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 0.9fr;
+  gap: 22px;
+}
+
+.panel-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.panel-heading a {
+  color: var(--color-primary);
+  font-weight: 800;
+}
+
+.chart-box {
+  width: 100%;
+  min-height: 220px;
+}
+
+.chart-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  margin-top: 14px;
+  color: var(--color-muted);
+  font-size: 13px;
+}
+
+.chart-summary span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.chart-summary i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.health-list div,
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.customer-health {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 22px;
+  align-items: center;
+}
+
+.customer-health-chart {
+  grid-template-columns: minmax(180px, 1fr) minmax(120px, 0.85fr);
+}
+
+.donut-box {
+  position: relative;
+  min-height: 220px;
+}
+
+.donut-center {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  display: grid;
+  place-items: center;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.donut-center strong {
+  font-size: 28px;
+}
+
+.donut-center span {
+  color: var(--color-muted);
+  font-size: 13px;
+}
+
+.health-list {
+  display: grid;
+  gap: 12px;
+}
+
+.health-dot {
+  width: 10px;
+  height: 10px;
+  margin-right: 8px;
+  border-radius: 50%;
+}
+
+.active-dot {
+  background: var(--color-success);
+}
+
+.inactive-dot {
+  background: var(--color-warning);
+}
+
+.quick-actions {
+  margin-top: 22px;
+  padding: 22px;
+}
+
+.quick-actions div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.quick-actions a {
+  padding: 10px 14px;
+  color: var(--color-primary);
+  background: var(--color-primary-soft);
+  border-radius: 8px;
+  font-weight: 800;
+}
+
+/* ===== 6. Customers/Leads pages: Customers.jsx and Leads.jsx ===== */
+/* Tables, filters, row actions, and status badges used by Customers/Leads. */
+.table-panel {
+  padding: 0;
+  overflow: hidden;
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  gap: 12px;
+  padding: 18px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.filters-three {
+  grid-template-columns: 1fr 180px 180px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 16px 18px;
+  text-align: left;
+  border-bottom: 1px solid #edf2f7;
+}
+
+th {
+  color: var(--color-muted);
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+td small,
+.table-main-text {
+  display: block;
+}
+
+td small {
+  margin-top: 4px;
+  color: var(--color-muted);
+}
+
+.person-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.action-buttons button,
+.pagination button {
+  padding: 8px 10px;
+  color: var(--color-primary);
+  background: var(--color-primary-soft);
+  border: 0;
+  border-radius: 8px;
+  font-weight: 800;
+}
+
+.danger-text {
+  color: #991b1b !important;
+  background: var(--color-danger-soft) !important;
+}
+
+.status-badge {
+  display: inline-flex;
+  padding: 5px 9px;
+  border-radius: 99px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.status-active,
+.status-converted {
+  color: #065f46;
+  background: var(--color-success-soft);
+}
+
+.status-inactive {
+  color: #92400e;
+  background: var(--color-warning-soft);
+}
+
+.status-new {
+  color: var(--color-primary);
+  background: var(--color-primary-soft);
+}
+
+.status-contacted {
+  color: #92400e;
+  background: var(--color-warning-soft);
+}
+
+.status-qualified {
+  color: var(--color-primary);
+  background: var(--color-primary-soft);
+}
+
+.pagination {
+  padding: 16px 18px;
+}
+
+/* Empty/loading states and spinner animation. */
+.empty-state,
+.loading {
+  display: grid;
+  place-items: center;
+  gap: 8px;
+  min-height: 220px;
+  padding: 30px;
+  text-align: center;
+}
+
+.full-page-loading {
+  min-height: 100vh;
+}
+
+.spinner {
+  width: 34px;
+  height: 34px;
+  border: 4px solid #ede9fe;
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===== 7. Modal and record forms: Modal.jsx plus create/edit forms ===== */
+/* Modal shell and record form grid used by add/edit dialogs. */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(10, 15, 28, 0.45);
+}
+
+.modal {
+  width: min(720px, 100%);
+  max-height: 90vh;
+  overflow: auto;
+  background: var(--color-card);
+  border-radius: 14px;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 22px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.modal-header button {
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--color-background);
+}
+
+.record-form {
+  padding: 22px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 16px;
+}
+
+.full-field {
+  grid-column: 1 / -1;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+/* ===== 8. Email page: Email.jsx ===== */
+/* Main email page split: message form on the left, helper checklist on the right. */
+.email-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.8fr);
+  gap: 22px;
+  align-items: start;
+}
+
+/* White panel around the send-email form. */
+.email-form {
+  padding: 0;
+  overflow: hidden;
+}
+
+.email-compose-header {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding: 22px;
+  background: linear-gradient(135deg, #f8fafc, #f3e8ff);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.email-compose-header h2 {
+  margin-bottom: 4px;
+}
+
+.email-compose-header p {
+  margin-bottom: 0;
+  color: var(--color-muted);
+}
+
+.email-compose-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 46px;
+  height: 46px;
+  color: var(--color-card);
+  background: var(--color-primary);
+  border-radius: 12px;
+}
+
+.email-form .alert {
+  margin: 18px 22px 0;
+}
+
+.email-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 16px;
+  padding: 22px 22px 0;
+}
+
+.email-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 12px;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+}
+
+.email-input-wrap:focus-within {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.14);
+}
+
+.email-input-wrap svg {
+  flex: 0 0 auto;
+  color: var(--color-muted);
+}
+
+.email-input-wrap input {
+  padding-left: 0;
+  padding-right: 0;
+  border: 0;
+  box-shadow: none;
+}
+
+.email-input-wrap input:focus {
+  box-shadow: none;
+}
+
+.email-message-field {
+  padding: 0 22px;
+}
+
+.email-message-field textarea {
+  min-height: 280px;
+  line-height: 1.6;
+}
+
+/* Right-side checklist column beside the email form. */
+.email-help {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+}
+
+/* .email-preview {
+  padding: 20px;
+}
+
+.email-preview .eyebrow {
+  margin-bottom: 10px;
+}
+
+.email-preview h2 {
+  margin-bottom: 10px;
+}
+
+.email-preview > p {
+  margin-bottom: 14px;
+  color: var(--color-muted);
+  font-size: 14px;
+}
+
+.email-preview div {
+  min-height: 130px;
+  padding: 14px;
+  color: var(--color-muted);
+  background: var(--color-background);
+  border: 1px dashed var(--color-border);
+  border-radius: 8px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+} */
+
+/* Individual email guidance card. */
+.help-card {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+}
+
+.help-card p {
+  margin-bottom: 0;
+  color: var(--color-muted);
+}
+
+.help-number {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 32px;
+  height: 32px;
+  color: var(--color-primary);
+  background: var(--color-primary-soft);
+  border-radius: 8px;
+  font-weight: 900;
+}
+
+/* Bottom row in the email form: character count plus submit button. */
+.email-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 22px;
+  background: #fbfdff;
+  border-top: 1px solid var(--color-border);
+}
+
+.email-footer span {
+  color: var(--color-muted);
+  font-size: 13px;
+}
+
+.email-send-button {
+  gap: 8px;
+}
+
+/* ===== 9. Responsive rules ===== */
+/* Tablet breakpoint stacks dashboard/email columns under the stats cards. */
+@media (max-width: 1150px) {
+  .auth-page {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-intro {
+    min-height: auto;
+    padding: auto;
+  }
+
+  .auth-intro h1 {
+    font-size: clamp(30px, 6vw, 44px);
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dashboard-grid,
+  .email-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile breakpoint switches to a drawer sidebar and single-column forms. */
+@media (max-width: 760px) {
+  .auth-brand {
+    margin-bottom: 20px;
+  }
+
+  .auth-intro {
+    padding: 26px 18px;
+  }
+
+  .auth-intro p:not(.eyebrow) {
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.2s ease;
+  }
+
+  .sidebar-open {
+    transform: translateX(0);
+  }
+
+  .menu-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 15;
+    background: rgba(10, 15, 28, 0.38);
+    border: 0;
+  }
+
+  .main-area {
+    margin-left: 0;
+  }
+
+  .menu-button {
+    display: inline-flex;
+  }
+
+  .topbar,
+  .page-content {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .page-heading {
+    flex-direction: column;
+  }
+
+  .stats-grid,
+  .filters,
+  .filters-three,
+  .form-grid,
+  .email-fields,
+  .customer-health {
+    grid-template-columns: 1fr;
+  }
+
+  .email-footer {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .email-send-button {
+    width: 100%;
+  }
+}
