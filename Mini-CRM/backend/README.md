@@ -178,16 +178,10 @@ PORT=5000
 MONGO_URI=mongodb://127.0.0.1:27017/mini-crm
 
 JWT_SECRET=your_super_secure_secret_key
-JWT_EXPIRES_IN=7d
 
-CLIENT_URL=http://localhost:3000
-
-EMAIL_HOST=smtp.gmail.com
-EMAIL_PORT=587
-EMAIL_SECURE=false
 EMAIL_USER=your_email@gmail.com
 EMAIL_PASS=your_app_password
-EMAIL_FROM=your_email@gmail.com
+
 ```
 
 ---
@@ -198,12 +192,6 @@ EMAIL_FROM=your_email@gmail.com
 
 ```bash
 npm run dev
-```
-
-### Production Mode
-
-```bash
-npm start
 ```
 
 Server:
