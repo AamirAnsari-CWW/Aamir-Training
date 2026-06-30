@@ -4,10 +4,6 @@ Responsive React frontend for the Mini CRM Development Assignment.
 
 The application demonstrates a working CRM prototype with authentication, dashboard reporting, customer management, lead tracking, email communication, reusable UI components, API integration, form validation, and responsive layouts.
 
-## Assignment Status
-
-All core requirements from the Mini CRM Development Assignment brief have been achieved.
-
 ## Business Scenario
 
 The Mini CRM helps teams manage customer inquiries, sales opportunities, follow-up activity, dashboard reporting, user access, and direct customer communication from one interface.
